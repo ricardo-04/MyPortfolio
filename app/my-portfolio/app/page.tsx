@@ -133,19 +133,19 @@ export default function Home() {
   return (
     <div className="mx-auto flex max-w-7xl flex-col lg:flex-row">
       {/* Sidebar */}
-      <aside className="border-b border-indigo-900/20 bg-gradient-to-b from-indigo-950 via-indigo-900 to-violet-900 text-indigo-100 lg:sticky lg:top-0 lg:h-screen lg:w-80 lg:shrink-0 lg:border-b-0 lg:border-r">
+      <aside className="border-b border-slate-200 bg-gradient-to-b from-slate-700 via-slate-800 to-slate-800 text-slate-300 lg:sticky lg:top-0 lg:h-screen lg:w-80 lg:shrink-0 lg:border-b-0 lg:border-r lg:border-slate-200">
         <div className="flex h-full flex-col justify-between p-8">
           <div>
             <h1 className="text-2xl font-bold tracking-tight text-white">
               Ricardo Pombo
             </h1>
-            <p className="mt-2 text-sm leading-relaxed text-indigo-200">
+            <p className="mt-2 text-sm leading-relaxed text-slate-400">
               Software Engineer focused on AI, finance and modern applications.
             </p>
 
             {/* Navigation */}
             <nav className="mt-8">
-              <p className="text-xs font-semibold uppercase tracking-widest text-indigo-300/70">
+              <p className="text-xs font-semibold uppercase tracking-widest text-slate-500">
                 Navigation
               </p>
               <ul className="mt-3 flex flex-col gap-1">
@@ -153,9 +153,9 @@ export default function Home() {
                   <li key={link.href}>
                     <a
                       href={link.href}
-                      className="group flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-indigo-200 transition-colors hover:bg-white/10 hover:text-white"
+                      className="group flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-slate-300 transition-colors hover:bg-white/5 hover:text-white"
                     >
-                      <span className="h-1.5 w-1.5 rounded-full bg-indigo-400/60 transition-colors group-hover:bg-cyan-300" />
+                      <span className="h-1.5 w-1.5 rounded-full bg-slate-600 transition-colors group-hover:bg-cyan-400" />
                       {link.label}
                     </a>
                   </li>
@@ -165,14 +165,14 @@ export default function Home() {
 
             {/* Tech stack */}
             <div className="mt-8">
-              <p className="text-xs font-semibold uppercase tracking-widest text-indigo-300/70">
+              <p className="text-xs font-semibold uppercase tracking-widest text-slate-500">
                 Tech Stack
               </p>
               <div className="mt-3 flex flex-wrap gap-2">
                 {techStack.map((tech) => (
                   <span
                     key={tech}
-                    className="rounded-md border border-white/15 bg-white/5 px-2.5 py-1 text-xs font-medium text-indigo-100"
+                    className="rounded-md border border-white/10 bg-white/5 px-2.5 py-1 text-xs font-medium text-slate-300"
                   >
                     {tech}
                   </span>
@@ -183,7 +183,7 @@ export default function Home() {
 
           {/* Links */}
           <div className="mt-10">
-            <p className="text-xs font-semibold uppercase tracking-widest text-indigo-300/70">
+            <p className="text-xs font-semibold uppercase tracking-widest text-slate-500">
               Links
             </p>
             <div className="mt-3 flex flex-col gap-2">
@@ -191,7 +191,7 @@ export default function Home() {
                 href="https://github.com/ricardo-04"
                 target="_blank"
                 rel="noreferrer"
-                className="text-sm font-medium text-indigo-200 transition-colors hover:text-cyan-300"
+                className="text-sm font-medium text-slate-300 transition-colors hover:text-cyan-400"
               >
                 GitHub ↗
               </a>
@@ -199,13 +199,13 @@ export default function Home() {
                 href="https://www.linkedin.com/in/ricardoapombo/"
                 target="_blank"
                 rel="noreferrer"
-                className="text-sm font-medium text-indigo-200 transition-colors hover:text-cyan-300"
+                className="text-sm font-medium text-slate-300 transition-colors hover:text-cyan-400"
               >
                 LinkedIn ↗
               </a>
               <a
                 href="mailto:ricardoapombo@gmail.com"
-                className="text-sm font-medium text-indigo-200 transition-colors hover:text-cyan-300"
+                className="text-sm font-medium text-slate-300 transition-colors hover:text-cyan-400"
               >
                 Email ↗
               </a>
