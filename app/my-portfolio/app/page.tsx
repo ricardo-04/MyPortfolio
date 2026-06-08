@@ -222,10 +222,63 @@ export default function Home() {
           </h2>
           <p className="mt-2 text-slate-600">Academic and personal projects.</p>
 
-          {/* Featured case study */}
+          {/* Featured case study — FinSight AI */}
+          <Link
+            href="/projects/finsight-ai"
+            className="group mt-10 block overflow-hidden rounded-2xl border border-teal-200 bg-gradient-to-br from-[#0F1A2E] to-[#0D2438] shadow-sm transition-all hover:border-teal-400 hover:shadow-md"
+          >
+            <div className="h-1.5 w-full bg-gradient-to-r from-teal-500 via-cyan-400 to-blue-500" />
+            <div className="p-7 sm:p-9">
+              <div className="flex flex-wrap items-center gap-2">
+                <span className="rounded-full bg-teal-500 px-2.5 py-1 text-xs font-semibold text-white">
+                  Featured · Agentic AI
+                </span>
+                <span className="text-sm font-medium text-slate-400">
+                  Personal project · 2025
+                </span>
+              </div>
+              <h3 className="mt-4 text-2xl font-bold tracking-tight text-white">
+                FinSight AI — Financial Intelligence Platform
+              </h3>
+              <p className="mt-2 text-base leading-relaxed text-slate-300">
+                An end-to-end AI engineering project: ingest financial PDFs,
+                extract structured metrics with LLMs, and analyse them through
+                a RAG chat, an autonomous multi-tool agent, and a live-market
+                terminal. Built to go deep on agentic workflows, RAG pipelines,
+                the Model Context Protocol and OpenTelemetry observability.
+              </p>
+              <div className="mt-5 flex flex-wrap gap-2">
+                {[
+                  "Agentic AI",
+                  "RAG",
+                  "MCP",
+                  "PydanticAI",
+                  "OpenTelemetry",
+                  "Docker",
+                  "FastAPI",
+                  "Next.js",
+                ].map((tag) => (
+                  <span
+                    key={tag}
+                    className="rounded-md border border-teal-700/60 bg-teal-900/40 px-2.5 py-1 text-xs font-medium text-teal-300"
+                  >
+                    {tag}
+                  </span>
+                ))}
+              </div>
+              <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-teal-400 transition-colors group-hover:text-teal-300">
+                Read the full case study
+                <span className="transition-transform group-hover:translate-x-0.5">
+                  →
+                </span>
+              </span>
+            </div>
+          </Link>
+
+          {/* Featured case study — Critical Software */}
           <Link
             href="/projects/critical-software"
-            className="group mt-10 block overflow-hidden rounded-2xl border border-indigo-200 bg-gradient-to-br from-indigo-50 to-violet-50 shadow-sm transition-all hover:border-indigo-300 hover:shadow-md"
+            className="group mt-6 block overflow-hidden rounded-2xl border border-indigo-200 bg-gradient-to-br from-indigo-50 to-violet-50 shadow-sm transition-all hover:border-indigo-300 hover:shadow-md"
           >
             <div className="h-1.5 w-full bg-gradient-to-r from-indigo-500 via-violet-500 to-fuchsia-500" />
             <div className="p-7 sm:p-9">
