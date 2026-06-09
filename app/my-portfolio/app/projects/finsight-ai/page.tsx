@@ -43,16 +43,16 @@ function SkillCard({
   accent: "teal" | "blue" | "violet" | "amber";
 }) {
   const colors: Record<string, string> = {
-    teal: "border-teal-200 bg-teal-50 text-teal-800",
-    blue: "border-blue-200 bg-blue-50 text-blue-800",
-    violet: "border-violet-200 bg-violet-50 text-violet-800",
-    amber: "border-amber-200 bg-amber-50 text-amber-800",
+    teal: "border-teal-800/50 bg-teal-950/30 text-teal-300",
+    blue: "border-blue-800/50 bg-blue-950/30 text-blue-300",
+    violet: "border-violet-800/50 bg-violet-950/30 text-violet-300",
+    amber: "border-amber-800/50 bg-amber-950/30 text-amber-300",
   };
   const titleColors: Record<string, string> = {
-    teal: "text-teal-700",
-    blue: "text-blue-700",
-    violet: "text-violet-700",
-    amber: "text-amber-700",
+    teal: "text-teal-400",
+    blue: "text-blue-400",
+    violet: "text-violet-400",
+    amber: "text-amber-400",
   };
   return (
     <div
@@ -62,36 +62,36 @@ function SkillCard({
       <p className={`mt-2 text-sm font-semibold uppercase tracking-wide ${titleColors[accent]}`}>
         {title}
       </p>
-      <p className="mt-1 text-sm leading-6">{body}</p>
+      <p className="mt-1 text-sm leading-6 text-zinc-400">{body}</p>
     </div>
   );
 }
 
 function H2({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="mt-14 scroll-mt-8 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
+    <h2 className="mt-14 scroll-mt-8 text-2xl font-bold tracking-tight text-zinc-100 sm:text-3xl">
       {children}
     </h2>
   );
 }
 
 function P({ children }: { children: React.ReactNode }) {
-  return <p className="mt-5 text-[16px] leading-8 text-slate-700">{children}</p>;
+  return <p className="mt-5 text-[16px] leading-8 text-zinc-400">{children}</p>;
 }
 
 export default function FinSightAIArticle() {
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-[#090909]">
       {/* Top bar */}
-      <div className="border-b border-slate-200 bg-white/80 backdrop-blur">
+      <div className="border-b border-zinc-800 bg-[#0e0e0e]/90 backdrop-blur">
         <div className="mx-auto flex max-w-3xl items-center justify-between px-6 py-4">
           <Link
             href="/#projects"
-            className="text-sm font-medium text-slate-500 transition-colors hover:text-indigo-600"
+            className="text-sm font-medium text-zinc-500 transition-colors hover:text-zinc-200"
           >
             ← Back to portfolio
           </Link>
-          <span className="text-xs font-semibold uppercase tracking-widest text-slate-400">
+          <span className="text-xs font-semibold uppercase tracking-widest text-zinc-600">
             Personal project
           </span>
         </div>
@@ -100,15 +100,15 @@ export default function FinSightAIArticle() {
       <article className="mx-auto max-w-3xl px-6 pb-24">
         {/* Header */}
         <header className="pt-12">
-          <div className="flex items-center gap-3 text-sm font-medium text-teal-600">
+          <div className="flex items-center gap-3 text-sm font-medium text-teal-400">
             <span>FinSight AI</span>
-            <span className="text-slate-300">•</span>
-            <span className="text-slate-500">Personal project · 2025</span>
+            <span className="text-zinc-700">•</span>
+            <span className="text-zinc-500">Personal project · 2025</span>
           </div>
-          <h1 className="mt-4 text-3xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-4xl">
+          <h1 className="mt-4 text-3xl font-extrabold leading-tight tracking-tight text-zinc-100 sm:text-4xl">
             AI-Powered Financial Intelligence Platform
           </h1>
-          <p className="mt-5 text-lg leading-8 text-slate-600">
+          <p className="mt-5 text-lg leading-8 text-zinc-400">
             FinSight AI ingests financial PDFs — 10-Qs, 10-Ks, earnings decks —
             and turns them into structured, queryable knowledge through four
             AI-driven workflows: structured metric extraction, grounded RAG
@@ -122,7 +122,7 @@ export default function FinSightAIArticle() {
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="rounded-md border border-teal-200 bg-teal-50 px-2.5 py-1 text-xs font-medium text-teal-700"
+                className="rounded-md border border-teal-800/60 bg-teal-950/30 px-2.5 py-1 text-xs font-medium text-teal-400"
               >
                 {tag}
               </span>
@@ -134,7 +134,7 @@ export default function FinSightAIArticle() {
               href="https://github.com/ricardo-04/FinSight-AI"
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-2 rounded-lg border border-slate-200 bg-white px-4 py-2 text-sm font-medium text-slate-700 transition-colors hover:border-slate-300 hover:bg-slate-50"
+              className="inline-flex items-center gap-2 rounded-lg border border-zinc-700 bg-zinc-900 px-4 py-2 text-sm font-medium text-zinc-300 transition-all hover:border-zinc-500 hover:bg-zinc-800 hover:text-zinc-100"
             >
               <svg viewBox="0 0 16 16" fill="currentColor" className="h-4 w-4">
                 <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z" />
@@ -145,7 +145,7 @@ export default function FinSightAIArticle() {
         </header>
 
         {/* Banner */}
-        <div className="mt-10 overflow-hidden rounded-2xl border border-slate-700 bg-[#0F1A2E] shadow-sm">
+        <div className="mt-10 overflow-hidden rounded-2xl border border-zinc-800 bg-[#0F1A2E] shadow-sm">
           <Image
             src="/finsight_linkedin_banner.svg"
             alt="FinSight AI — banner showing the tech stack: RAG pipeline, AI agents, OpenTelemetry, Docker"
@@ -179,35 +179,35 @@ export default function FinSightAIArticle() {
           FinSight AI exposes four distinct workflows through the same Next.js
           front-end:
         </P>
-        <div className="mt-6 overflow-hidden rounded-xl border border-slate-200">
+        <div className="mt-6 overflow-hidden rounded-xl border border-zinc-800">
           <table className="w-full text-sm">
             <thead>
-              <tr className="border-b border-slate-200 bg-slate-50 text-left">
-                <th className="px-4 py-3 font-semibold text-slate-700">Mode</th>
-                <th className="px-4 py-3 font-semibold text-slate-700">What it does</th>
-                <th className="px-4 py-3 font-semibold text-slate-700">How</th>
+              <tr className="border-b border-zinc-800 bg-zinc-900/60 text-left">
+                <th className="px-4 py-3 font-semibold text-zinc-300">Mode</th>
+                <th className="px-4 py-3 font-semibold text-zinc-300">What it does</th>
+                <th className="px-4 py-3 font-semibold text-zinc-300">How</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100 bg-white">
+            <tbody className="divide-y divide-zinc-800/80 bg-[#111111]">
               <tr>
-                <td className="px-4 py-3 font-medium text-slate-800">Extract</td>
-                <td className="px-4 py-3 text-slate-600">Upload a 10-Q/10-K → structured metrics (revenue, YoY growth, risks)</td>
-                <td className="px-4 py-3 text-slate-500">LLM extraction agent + chunk prioritisation</td>
+                <td className="px-4 py-3 font-medium text-zinc-200">Extract</td>
+                <td className="px-4 py-3 text-zinc-400">Upload a 10-Q/10-K → structured metrics (revenue, YoY growth, risks)</td>
+                <td className="px-4 py-3 text-zinc-500">LLM extraction agent + chunk prioritisation</td>
               </tr>
               <tr>
-                <td className="px-4 py-3 font-medium text-slate-800">Chat (RAG)</td>
-                <td className="px-4 py-3 text-slate-600">Ask questions; every answer cites source passages</td>
-                <td className="px-4 py-3 text-slate-500">Semantic retrieval + research agent</td>
+                <td className="px-4 py-3 font-medium text-zinc-200">Chat (RAG)</td>
+                <td className="px-4 py-3 text-zinc-400">Ask questions; every answer cites source passages</td>
+                <td className="px-4 py-3 text-zinc-500">Semantic retrieval + research agent</td>
               </tr>
               <tr>
-                <td className="px-4 py-3 font-medium text-slate-800">Agent mode</td>
-                <td className="px-4 py-3 text-slate-600">Autonomous multi-tool reasoning over docs and live market data</td>
-                <td className="px-4 py-3 text-slate-500">Agentic analyst (streaming SSE)</td>
+                <td className="px-4 py-3 font-medium text-zinc-200">Agent mode</td>
+                <td className="px-4 py-3 text-zinc-400">Autonomous multi-tool reasoning over docs and live market data</td>
+                <td className="px-4 py-3 text-zinc-500">Agentic analyst (streaming SSE)</td>
               </tr>
               <tr>
-                <td className="px-4 py-3 font-medium text-slate-800">Financial Intel</td>
-                <td className="px-4 py-3 text-slate-600">Type a ticker → full AI analyst report with live metric cards</td>
-                <td className="px-4 py-3 text-slate-500">FMP live data + financial analyst agent</td>
+                <td className="px-4 py-3 font-medium text-zinc-200">Financial Intel</td>
+                <td className="px-4 py-3 text-zinc-400">Type a ticker → full AI analyst report with live metric cards</td>
+                <td className="px-4 py-3 text-zinc-500">FMP live data + financial analyst agent</td>
               </tr>
             </tbody>
           </table>
@@ -302,11 +302,11 @@ export default function FinSightAIArticle() {
         </P>
         <P>
           Guardrails make the agentic mode safe to ship:{" "}
-          <code className="rounded bg-slate-100 px-1.5 py-0.5 text-sm font-mono text-slate-800">
+          <code className="rounded bg-zinc-800 px-1.5 py-0.5 text-sm font-mono text-zinc-300">
             UsageLimits(request_limit, tool_calls_limit)
           </code>{" "}
           bound total model requests and tool calls per run;{" "}
-          <code className="rounded bg-slate-100 px-1.5 py-0.5 text-sm font-mono text-slate-800">
+          <code className="rounded bg-zinc-800 px-1.5 py-0.5 text-sm font-mono text-zinc-300">
             asyncio.wait_for(..., timeout)
           </code>{" "}
           ensures one slow dependency cannot hang the entire run; and tool
@@ -320,7 +320,7 @@ export default function FinSightAIArticle() {
           The pipeline has four stages: parse (PyMuPDF, with encrypted-PDF
           rejection and a page cap), chunk (overlapping windows to preserve
           context at boundaries), embed (
-          <code className="rounded bg-slate-100 px-1.5 py-0.5 text-sm font-mono text-slate-800">
+          <code className="rounded bg-zinc-800 px-1.5 py-0.5 text-sm font-mono text-zinc-300">
             nvidia/nv-embedqa-e5-v5
           </code>{" "}
           at 1024 dimensions), and retrieve (native cosine distance in pgvector
@@ -339,7 +339,7 @@ export default function FinSightAIArticle() {
         <H2>Model Context Protocol server</H2>
         <P>
           Beyond the web UI, the project ships a standalone{" "}
-          <code className="rounded bg-slate-100 px-1.5 py-0.5 text-sm font-mono text-slate-800">
+          <code className="rounded bg-zinc-800 px-1.5 py-0.5 text-sm font-mono text-zinc-300">
             mcp_server.py
           </code>{" "}
           built with FastMCP. It exposes four tools over stdio:{" "}
@@ -369,7 +369,7 @@ export default function FinSightAIArticle() {
             { src: "/finsight/06-agent-mode.png", label: "Chat — Agent mode (multi-tool, streaming)", w: 1920, h: 1080 },
           ].map((shot) => (
             <figure key={shot.label} className="flex flex-col gap-2">
-              <div className="overflow-hidden rounded-xl border border-slate-200 bg-slate-50">
+              <div className="overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900">
                 <Image
                   src={shot.src}
                   alt={shot.label}
@@ -378,7 +378,7 @@ export default function FinSightAIArticle() {
                   className="h-auto w-full object-cover"
                 />
               </div>
-              <figcaption className="text-center text-xs font-medium text-slate-500">
+              <figcaption className="text-center text-xs font-medium text-zinc-600">
                 {shot.label}
               </figcaption>
             </figure>
@@ -387,15 +387,15 @@ export default function FinSightAIArticle() {
 
         {/* Tech stack */}
         <H2>Full tech stack</H2>
-        <div className="mt-6 overflow-hidden rounded-xl border border-slate-200">
+        <div className="mt-6 overflow-hidden rounded-xl border border-zinc-800">
           <table className="w-full text-sm">
             <thead>
-              <tr className="border-b border-slate-200 bg-slate-50 text-left">
-                <th className="px-4 py-3 font-semibold text-slate-700">Layer</th>
-                <th className="px-4 py-3 font-semibold text-slate-700">Technology</th>
+              <tr className="border-b border-zinc-800 bg-zinc-900/60 text-left">
+                <th className="px-4 py-3 font-semibold text-zinc-300">Layer</th>
+                <th className="px-4 py-3 font-semibold text-zinc-300">Technology</th>
               </tr>
             </thead>
-            <tbody className="divide-y divide-slate-100 bg-white">
+            <tbody className="divide-y divide-zinc-800/80 bg-[#111111]">
               {[
                 ["Frontend", "Next.js 14, React, TailwindCSS, TypeScript"],
                 ["Backend", "FastAPI, Python 3.12, SQLAlchemy (async)"],
@@ -409,8 +409,8 @@ export default function FinSightAIArticle() {
                 ["CI", "GitHub Actions (evals, ruff, pytest)"],
               ].map(([layer, tech]) => (
                 <tr key={layer}>
-                  <td className="px-4 py-3 font-medium text-slate-800">{layer}</td>
-                  <td className="px-4 py-3 text-slate-600">{tech}</td>
+                  <td className="px-4 py-3 font-medium text-zinc-200">{layer}</td>
+                  <td className="px-4 py-3 text-zinc-400">{tech}</td>
                 </tr>
               ))}
             </tbody>
@@ -442,10 +442,10 @@ export default function FinSightAIArticle() {
           are not production-ready, no matter how capable the model is.
         </P>
 
-        <div className="mt-14 border-t border-slate-200 pt-8">
+        <div className="mt-14 border-t border-zinc-800 pt-8">
           <Link
             href="/#projects"
-            className="inline-flex items-center gap-2 rounded-lg bg-slate-900 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-slate-700"
+            className="inline-flex items-center gap-2 rounded-lg border border-zinc-700 bg-zinc-900 px-4 py-2 text-sm font-semibold text-zinc-300 transition-all hover:border-zinc-500 hover:bg-zinc-800 hover:text-zinc-100"
           >
             ← Back to portfolio
           </Link>

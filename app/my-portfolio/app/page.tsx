@@ -119,13 +119,13 @@ const accentStyles: Record<
 > = {
   indigo: {
     bar: "from-indigo-500 to-violet-500",
-    tag: "border-indigo-200 bg-indigo-50 text-indigo-700",
-    ring: "group-hover:border-indigo-300",
+    tag: "border-indigo-800/60 bg-indigo-950/50 text-indigo-300",
+    ring: "group-hover:border-indigo-700",
   },
   amber: {
     bar: "from-amber-500 to-orange-500",
-    tag: "border-amber-200 bg-amber-50 text-amber-700",
-    ring: "group-hover:border-amber-300",
+    tag: "border-amber-800/60 bg-amber-950/50 text-amber-300",
+    ring: "group-hover:border-amber-700",
   },
 };
 
@@ -133,29 +133,40 @@ export default function Home() {
   return (
     <div className="mx-auto flex max-w-7xl flex-col lg:flex-row">
       {/* Sidebar */}
-      <aside className="border-b border-slate-200 bg-gradient-to-b from-slate-700 via-slate-800 to-slate-800 text-slate-300 lg:sticky lg:top-0 lg:h-screen lg:w-80 lg:shrink-0 lg:border-b-0 lg:border-r lg:border-slate-200">
+      <aside className="border-b border-zinc-800/80 bg-[#0e0e0e] lg:sticky lg:top-0 lg:h-screen lg:w-72 lg:shrink-0 lg:border-b-0 lg:border-r lg:border-zinc-800/80">
         <div className="flex h-full flex-col justify-between p-8">
           <div>
-            <h1 className="text-2xl font-bold tracking-tight text-white">
+            {/* Monogram avatar */}
+            <div className="flex h-11 w-11 items-center justify-center rounded-xl bg-gradient-to-br from-cyan-500 to-blue-600 text-sm font-extrabold tracking-tight text-white shadow-lg shadow-cyan-950/40">
+              RP
+            </div>
+
+            <h1 className="mt-5 text-xl font-bold tracking-tight text-zinc-100">
               Ricardo Pombo
             </h1>
-            <p className="mt-2 text-sm leading-relaxed text-slate-400">
+            <p className="mt-1.5 text-sm leading-relaxed text-zinc-500">
               Software Engineer focused on AI, finance and modern applications.
             </p>
 
+            {/* Status */}
+            <div className="mt-4 inline-flex items-center gap-1.5 rounded-full border border-emerald-800/50 bg-emerald-950/40 px-3 py-1 text-xs font-medium text-emerald-400">
+              <span className="h-1.5 w-1.5 animate-pulse rounded-full bg-emerald-400" />
+              Open to opportunities
+            </div>
+
             {/* Navigation */}
             <nav className="mt-8">
-              <p className="text-xs font-semibold uppercase tracking-widest text-slate-500">
+              <p className="text-[11px] font-semibold uppercase tracking-widest text-zinc-600">
                 Navigation
               </p>
-              <ul className="mt-3 flex flex-col gap-1">
+              <ul className="mt-3 flex flex-col gap-0.5">
                 {navLinks.map((link) => (
                   <li key={link.href}>
                     <a
                       href={link.href}
-                      className="group flex items-center gap-2 rounded-lg px-3 py-2 text-sm font-medium text-slate-300 transition-colors hover:bg-white/5 hover:text-white"
+                      className="group flex items-center gap-2.5 rounded-lg px-3 py-2 text-sm font-medium text-zinc-400 transition-all hover:bg-white/[0.04] hover:text-zinc-100"
                     >
-                      <span className="h-1.5 w-1.5 rounded-full bg-slate-600 transition-colors group-hover:bg-cyan-400" />
+                      <span className="h-1 w-1 rounded-full bg-zinc-700 transition-colors group-hover:bg-cyan-400" />
                       {link.label}
                     </a>
                   </li>
@@ -165,14 +176,14 @@ export default function Home() {
 
             {/* Tech stack */}
             <div className="mt-8">
-              <p className="text-xs font-semibold uppercase tracking-widest text-slate-500">
+              <p className="text-[11px] font-semibold uppercase tracking-widest text-zinc-600">
                 Tech Stack
               </p>
-              <div className="mt-3 flex flex-wrap gap-2">
+              <div className="mt-3 flex flex-wrap gap-1.5">
                 {techStack.map((tech) => (
                   <span
                     key={tech}
-                    className="rounded-md border border-white/10 bg-white/5 px-2.5 py-1 text-xs font-medium text-slate-300"
+                    className="rounded-md border border-zinc-800 bg-zinc-900/60 px-2.5 py-1 text-xs font-medium text-zinc-500 transition-colors hover:border-zinc-700 hover:text-zinc-300"
                   >
                     {tech}
                   </span>
@@ -183,31 +194,34 @@ export default function Home() {
 
           {/* Links */}
           <div className="mt-10">
-            <p className="text-xs font-semibold uppercase tracking-widest text-slate-500">
-              Links
+            <p className="text-[11px] font-semibold uppercase tracking-widest text-zinc-600">
+              Connect
             </p>
-            <div className="mt-3 flex flex-col gap-2">
+            <div className="mt-3 flex flex-col gap-1.5">
               <a
                 href="https://github.com/ricardo-04"
                 target="_blank"
                 rel="noreferrer"
-                className="text-sm font-medium text-slate-300 transition-colors hover:text-cyan-400"
+                className="group flex items-center justify-between rounded-lg px-3 py-2 text-sm font-medium text-zinc-500 transition-all hover:bg-white/[0.04] hover:text-zinc-200"
               >
-                GitHub ↗
+                GitHub
+                <span className="opacity-0 transition-opacity group-hover:opacity-100 text-zinc-400">↗</span>
               </a>
               <a
                 href="https://www.linkedin.com/in/ricardoapombo/"
                 target="_blank"
                 rel="noreferrer"
-                className="text-sm font-medium text-slate-300 transition-colors hover:text-cyan-400"
+                className="group flex items-center justify-between rounded-lg px-3 py-2 text-sm font-medium text-zinc-500 transition-all hover:bg-white/[0.04] hover:text-zinc-200"
               >
-                LinkedIn ↗
+                LinkedIn
+                <span className="opacity-0 transition-opacity group-hover:opacity-100 text-zinc-400">↗</span>
               </a>
               <a
                 href="mailto:ricardoapombo@gmail.com"
-                className="text-sm font-medium text-slate-300 transition-colors hover:text-cyan-400"
+                className="group flex items-center justify-between rounded-lg px-3 py-2 text-sm font-medium text-zinc-500 transition-all hover:bg-white/[0.04] hover:text-zinc-200"
               >
-                Email ↗
+                Email
+                <span className="opacity-0 transition-opacity group-hover:opacity-100 text-zinc-400">↗</span>
               </a>
             </div>
           </div>
@@ -215,38 +229,53 @@ export default function Home() {
       </aside>
 
       {/* Main content */}
-      <main className="flex-1 px-6 py-12 sm:px-10 lg:px-14">
+      <main className="flex-1 bg-[#090909] px-6 py-14 sm:px-10 lg:px-14">
         <section id="projects" className="max-w-3xl">
-          <h2 className="text-3xl font-bold tracking-tight text-slate-900 sm:text-4xl">
-            Featured Projects
-          </h2>
-          <p className="mt-2 text-slate-600">Academic and personal projects.</p>
+          <div className="flex items-baseline gap-3">
+            <h2 className="text-3xl font-bold tracking-tight text-zinc-100 sm:text-4xl">
+              Projects
+            </h2>
+            <span className="rounded-full border border-zinc-800 bg-zinc-900 px-2.5 py-0.5 text-xs font-medium text-zinc-600">
+              4 projects
+            </span>
+          </div>
+          <p className="mt-2 text-sm text-zinc-600">Academic and personal projects.</p>
 
           {/* Featured case study — FinSight AI */}
           <Link
             href="/projects/finsight-ai"
-            className="group mt-10 block overflow-hidden rounded-2xl border border-teal-200 bg-gradient-to-br from-[#0F1A2E] to-[#0D2438] shadow-sm transition-all hover:border-teal-400 hover:shadow-md"
+            className="group mt-10 block overflow-hidden rounded-2xl border border-zinc-800 bg-[#111111] shadow-xl transition-all duration-300 hover:border-teal-900/80 hover:shadow-teal-950/20"
           >
-            <div className="h-1.5 w-full bg-gradient-to-r from-teal-500 via-cyan-400 to-blue-500" />
+            <div className="h-px w-full bg-gradient-to-r from-transparent via-teal-400/70 to-transparent" />
             <div className="p-7 sm:p-9">
               <div className="flex flex-wrap items-center gap-2">
-                <span className="rounded-full bg-teal-500 px-2.5 py-1 text-xs font-semibold text-white">
+                <span className="rounded-full border border-teal-500/30 bg-teal-500/10 px-3 py-1 text-xs font-semibold text-teal-400">
                   Featured · Agentic AI
                 </span>
-                <span className="text-sm font-medium text-slate-400">
-                  Personal project · 2025
+                <span className="text-xs font-medium text-zinc-600">
+                  Personal project · 2026
                 </span>
               </div>
-              <h3 className="mt-4 text-2xl font-bold tracking-tight text-white">
+              <h3 className="mt-4 text-2xl font-bold tracking-tight text-zinc-100">
                 FinSight AI — Financial Intelligence Platform
               </h3>
-              <p className="mt-2 text-base leading-relaxed text-slate-300">
+              <p className="mt-2 text-[15px] leading-relaxed text-zinc-400">
                 An end-to-end AI engineering project: ingest financial PDFs,
                 extract structured metrics with LLMs, and analyse them through
                 a RAG chat, an autonomous multi-tool agent, and a live-market
                 terminal. Built to go deep on agentic workflows, RAG pipelines,
                 the Model Context Protocol and OpenTelemetry observability.
               </p>
+              {/* Banner */}
+              <div className="mt-6 overflow-hidden rounded-xl border-2 border-teal-900/60 bg-[#0F1A2E] shadow-lg shadow-teal-950/30">
+                <Image
+                  src="/finsight_linkedin_banner.svg"
+                  alt="FinSight AI banner"
+                  width={770}
+                  height={400}
+                  className="h-auto w-full"
+                />
+              </div>
               <div className="mt-5 flex flex-wrap gap-2">
                 {[
                   "Agentic AI",
@@ -260,13 +289,13 @@ export default function Home() {
                 ].map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-md border border-teal-700/60 bg-teal-900/40 px-2.5 py-1 text-xs font-medium text-teal-300"
+                    className="rounded-md border border-teal-900/60 bg-teal-950/30 px-2.5 py-1 text-xs font-medium text-teal-400"
                   >
                     {tag}
                   </span>
                 ))}
               </div>
-              <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-teal-400 transition-colors group-hover:text-teal-300">
+              <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-teal-400 transition-all group-hover:text-teal-300 group-hover:gap-2">
                 Read the full case study
                 <span className="transition-transform group-hover:translate-x-0.5">
                   →
@@ -278,22 +307,22 @@ export default function Home() {
           {/* Featured case study — Critical Software */}
           <Link
             href="/projects/critical-software"
-            className="group mt-6 block overflow-hidden rounded-2xl border border-indigo-200 bg-gradient-to-br from-indigo-50 to-violet-50 shadow-sm transition-all hover:border-indigo-300 hover:shadow-md"
+            className="group mt-5 block overflow-hidden rounded-2xl border border-zinc-800 bg-[#111111] shadow-xl transition-all duration-300 hover:border-indigo-900/80 hover:shadow-indigo-950/20"
           >
-            <div className="h-1.5 w-full bg-gradient-to-r from-indigo-500 via-violet-500 to-fuchsia-500" />
+            <div className="h-px w-full bg-gradient-to-r from-transparent via-indigo-400/70 to-transparent" />
             <div className="p-7 sm:p-9">
               <div className="flex flex-wrap items-center gap-2">
-                <span className="rounded-full bg-indigo-600 px-2.5 py-1 text-xs font-semibold text-white">
+                <span className="rounded-full border border-indigo-500/30 bg-indigo-500/10 px-3 py-1 text-xs font-semibold text-indigo-400">
                   Featured · AI / ML
                 </span>
-                <span className="text-sm font-medium text-slate-500">
+                <span className="text-xs font-medium text-zinc-600">
                   Critical Software · 2025
                 </span>
               </div>
-              <h3 className="mt-4 text-2xl font-bold tracking-tight text-slate-900">
+              <h3 className="mt-4 text-2xl font-bold tracking-tight text-zinc-100">
                 AI-Enhanced Semantic Analysis of Vehicle Logs
               </h3>
-              <p className="mt-2 text-base leading-relaxed text-slate-600">
+              <p className="mt-2 text-[15px] leading-relaxed text-zinc-400">
                 My internship project: an AI-powered tool that automatically
                 analyzes automotive vehicle logs — combining Machine Learning
                 pipelines (Random Forest, DBSCAN, LSTM) with a
@@ -313,13 +342,13 @@ export default function Home() {
                 ].map((tag) => (
                   <span
                     key={tag}
-                    className="rounded-md border border-indigo-200 bg-white/70 px-2.5 py-1 text-xs font-medium text-indigo-700"
+                    className="rounded-md border border-indigo-900/60 bg-indigo-950/30 px-2.5 py-1 text-xs font-medium text-indigo-400"
                   >
                     {tag}
                   </span>
                 ))}
               </div>
-              <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-indigo-600 transition-colors group-hover:text-indigo-500">
+              <span className="mt-6 inline-flex items-center gap-1.5 text-sm font-semibold text-indigo-400 transition-all group-hover:text-indigo-300 group-hover:gap-2">
                 Read the full case study
                 <span className="transition-transform group-hover:translate-x-0.5">
                   →
@@ -328,56 +357,56 @@ export default function Home() {
             </div>
           </Link>
 
-          <div className="mt-10 flex flex-col gap-12">
+          <div className="mt-8 flex flex-col gap-6">
             {[...projects].reverse().map((project) => {
               const accent =
                 accentStyles[project.accent] ?? accentStyles.indigo;
               return (
                 <article
                   key={project.title}
-                  className="group overflow-hidden rounded-2xl border border-slate-200 bg-white shadow-sm transition-colors"
+                  className="group overflow-hidden rounded-2xl border border-zinc-800 bg-[#111111] shadow-sm transition-all duration-300 hover:border-zinc-700"
                 >
                   {/* Colored top bar */}
                   <div
-                    className={`h-1.5 w-full bg-gradient-to-r ${accent.bar}`}
+                    className={`h-px w-full bg-gradient-to-r ${accent.bar}`}
                   />
 
                   <div className="p-7 sm:p-9">
                     {/* Header */}
                     <header>
                       <div className="flex flex-wrap items-baseline justify-between gap-2">
-                        <h3 className="text-2xl font-bold tracking-tight text-slate-900">
+                        <h3 className="text-xl font-bold tracking-tight text-zinc-100">
                           {project.title}
                         </h3>
-                        <span className="text-sm font-medium text-slate-400">
+                        <span className="text-xs font-medium text-zinc-600">
                           {project.year}
                         </span>
                       </div>
-                      <p className="mt-2 text-base leading-relaxed text-slate-600">
+                      <p className="mt-2 text-[15px] leading-relaxed text-zinc-400">
                         {project.tagline}
                       </p>
                     </header>
 
                     {/* Banner image */}
-                    <div className="relative mt-6 overflow-hidden rounded-xl">
+                    <div className="relative mt-6 overflow-hidden rounded-xl border border-zinc-800">
                       <Image
                         src={project.banner}
                         alt={`${project.title} banner`}
                         width={1400}
                         height={500}
-                        className="h-44 w-full object-cover sm:h-56"
+                        className="h-44 w-full object-cover opacity-80 sm:h-52"
                       />
-                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-slate-900/30 to-transparent" />
+                      <div className="pointer-events-none absolute inset-0 bg-gradient-to-t from-[#111111]/50 to-transparent" />
                     </div>
 
                     {/* Write-up — first paragraph */}
-                    <div className="mt-6 text-[15px] leading-7 text-slate-700">
+                    <div className="mt-6 text-[15px] leading-7 text-zinc-400">
                       <p>{project.writeup[0]}</p>
                     </div>
 
                     {/* Read more — rest of write-up + screenshots */}
                     <details className="group/more mt-4">
-                      <summary className="inline-flex cursor-pointer list-none items-center gap-1.5 text-sm font-semibold text-indigo-600 transition-colors hover:text-indigo-500 [&::-webkit-details-marker]:hidden">
+                      <summary className="inline-flex cursor-pointer list-none items-center gap-1.5 text-sm font-semibold text-zinc-500 transition-colors hover:text-zinc-300 [&::-webkit-details-marker]:hidden">
                         <span className="group-open/more:hidden">Read more</span>
                         <span className="hidden group-open/more:inline">
                           Show less
@@ -388,7 +417,7 @@ export default function Home() {
                       </summary>
 
                       {project.writeup.length > 1 && (
-                        <div className="mt-4 flex flex-col gap-4 text-[15px] leading-7 text-slate-700">
+                        <div className="mt-4 flex flex-col gap-4 text-[15px] leading-7 text-zinc-400">
                           {project.writeup.slice(1).map((paragraph, i) => (
                             <p key={i}>{paragraph}</p>
                           ))}
@@ -402,7 +431,7 @@ export default function Home() {
                             key={shot.label}
                             className="flex flex-col gap-2"
                           >
-                            <div className="overflow-hidden rounded-xl border border-slate-200 bg-slate-50">
+                            <div className="overflow-hidden rounded-xl border border-zinc-800 bg-zinc-900">
                               <Image
                                 src={shot.src}
                                 alt={shot.label}
@@ -411,7 +440,7 @@ export default function Home() {
                                 className="h-auto w-full object-cover"
                               />
                             </div>
-                            <figcaption className="text-center text-xs font-medium text-slate-500">
+                            <figcaption className="text-center text-xs font-medium text-zinc-600">
                               {shot.label}
                             </figcaption>
                           </figure>
@@ -432,12 +461,12 @@ export default function Home() {
                     </div>
 
                     {/* GitHub button */}
-                    <div className="mt-7">
+                    <div className="mt-6">
                       <a
                         href={project.github}
                         target="_blank"
                         rel="noreferrer"
-                        className="inline-flex items-center gap-2 rounded-lg bg-slate-900 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-slate-700"
+                        className="inline-flex items-center gap-2 rounded-lg border border-zinc-700 bg-zinc-900 px-4 py-2 text-sm font-semibold text-zinc-300 transition-all hover:border-zinc-500 hover:bg-zinc-800 hover:text-zinc-100"
                       >
                         View on GitHub ↗
                       </a>
@@ -452,12 +481,12 @@ export default function Home() {
         {/* About */}
         <section
           id="about"
-          className="mt-16 max-w-3xl border-t border-slate-200 pt-12"
+          className="mt-20 max-w-3xl border-t border-zinc-800/80 pt-14"
         >
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+          <h2 className="text-2xl font-bold tracking-tight text-zinc-100">
             About
           </h2>
-          <p className="mt-4 text-[15px] leading-7 text-slate-700">
+          <p className="mt-4 text-[15px] leading-7 text-zinc-400">
             Full-stack engineer with a strong interest in AI and finance. I
             build projects to learn, experiment and sharpen my skills — always
             looking for the next interesting problem to solve.
@@ -467,18 +496,18 @@ export default function Home() {
         {/* Contact */}
         <section
           id="contact"
-          className="mt-12 max-w-3xl border-t border-slate-200 pt-12"
+          className="mt-12 max-w-3xl border-t border-zinc-800/80 pt-14"
         >
-          <h2 className="text-2xl font-bold tracking-tight text-slate-900">
+          <h2 className="text-2xl font-bold tracking-tight text-zinc-100">
             Contact
           </h2>
-          <p className="mt-4 text-[15px] leading-7 text-slate-700">
+          <p className="mt-4 text-[15px] leading-7 text-zinc-400">
             Want to work together or just say hi? Reach out on{" "}
             <a
               href="https://github.com/ricardo-04"
               target="_blank"
               rel="noreferrer"
-              className="font-medium text-indigo-600 underline underline-offset-2 hover:text-indigo-500"
+              className="font-medium text-cyan-400 underline underline-offset-2 hover:text-cyan-300"
             >
               GitHub
             </a>
@@ -487,21 +516,21 @@ export default function Home() {
               href="https://www.linkedin.com/in/ricardoapombo/"
               target="_blank"
               rel="noreferrer"
-              className="font-medium text-indigo-600 underline underline-offset-2 hover:text-indigo-500"
+              className="font-medium text-cyan-400 underline underline-offset-2 hover:text-cyan-300"
             >
               LinkedIn
             </a>{" "}
             or by{" "}
             <a
               href="mailto:ricardoapombo@gmail.com"
-              className="font-medium text-indigo-600 underline underline-offset-2 hover:text-indigo-500"
+              className="font-medium text-cyan-400 underline underline-offset-2 hover:text-cyan-300"
             >
               email
             </a>
             .
           </p>
 
-          <footer className="mt-12 text-xs text-slate-400">
+          <footer className="mt-16 text-xs text-zinc-700">
             © {new Date().getFullYear()} Ricardo Pombo
           </footer>
         </section>

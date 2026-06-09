@@ -44,8 +44,8 @@ function Figure({
   return (
     <figure className="my-8">
       <div
-        className={`overflow-hidden rounded-xl border border-slate-200 ${
-          dark ? "bg-slate-900" : "bg-white"
+        className={`overflow-hidden rounded-xl border border-zinc-800 ${
+          dark ? "bg-zinc-900" : "bg-[#111111]"
         }`}
       >
         <Image
@@ -56,7 +56,7 @@ function Figure({
           className="mx-auto h-auto w-full max-w-2xl object-contain p-3"
         />
       </div>
-      <figcaption className="mt-3 text-center text-sm text-slate-500">
+      <figcaption className="mt-3 text-center text-sm text-zinc-600">
         {caption}
       </figcaption>
     </figure>
@@ -65,29 +65,29 @@ function Figure({
 
 function H2({ children }: { children: React.ReactNode }) {
   return (
-    <h2 className="mt-14 scroll-mt-8 text-2xl font-bold tracking-tight text-slate-900 sm:text-3xl">
+    <h2 className="mt-14 scroll-mt-8 text-2xl font-bold tracking-tight text-zinc-100 sm:text-3xl">
       {children}
     </h2>
   );
 }
 
 function P({ children }: { children: React.ReactNode }) {
-  return <p className="mt-5 text-[16px] leading-8 text-slate-700">{children}</p>;
+  return <p className="mt-5 text-[16px] leading-8 text-zinc-400">{children}</p>;
 }
 
 export default function CriticalSoftwareArticle() {
   return (
-    <div className="min-h-screen bg-slate-50">
+    <div className="min-h-screen bg-[#090909]">
       {/* Top bar */}
-      <div className="border-b border-slate-200 bg-white/80 backdrop-blur">
+      <div className="border-b border-zinc-800 bg-[#0e0e0e]/90 backdrop-blur">
         <div className="mx-auto flex max-w-3xl items-center justify-between px-6 py-4">
           <Link
             href="/#projects"
-            className="text-sm font-medium text-slate-500 transition-colors hover:text-indigo-600"
+            className="text-sm font-medium text-zinc-500 transition-colors hover:text-zinc-200"
           >
             ← Back to portfolio
           </Link>
-          <span className="text-xs font-semibold uppercase tracking-widest text-slate-400">
+          <span className="text-xs font-semibold uppercase tracking-widest text-zinc-600">
             Case study
           </span>
         </div>
@@ -96,15 +96,15 @@ export default function CriticalSoftwareArticle() {
       <article className="mx-auto max-w-3xl px-6 pb-24">
         {/* Header */}
         <header className="pt-12">
-          <div className="flex items-center gap-3 text-sm font-medium text-indigo-600">
+          <div className="flex items-center gap-3 text-sm font-medium text-indigo-400">
             <span>Critical Software</span>
-            <span className="text-slate-300">•</span>
-            <span className="text-slate-500">Internship · Feb–Jun 2025</span>
+            <span className="text-zinc-700">•</span>
+            <span className="text-zinc-500">Internship · Feb–Jun 2025</span>
           </div>
-          <h1 className="mt-4 text-3xl font-extrabold leading-tight tracking-tight text-slate-900 sm:text-4xl">
+          <h1 className="mt-4 text-3xl font-extrabold leading-tight tracking-tight text-zinc-100 sm:text-4xl">
             AI-Enhanced Semantic Analysis of Vehicle Logs
           </h1>
-          <p className="mt-5 text-lg leading-8 text-slate-600">
+          <p className="mt-5 text-lg leading-8 text-zinc-400">
             During my internship at Critical Software I built an AI-powered tool
             to automatically analyze vehicle log files from the automotive
             industry — combining classic Machine Learning pipelines with a
@@ -116,14 +116,14 @@ export default function CriticalSoftwareArticle() {
             {tags.map((tag) => (
               <span
                 key={tag}
-                className="rounded-md border border-indigo-200 bg-indigo-50 px-2.5 py-1 text-xs font-medium text-indigo-700"
+                className="rounded-md border border-indigo-800/60 bg-indigo-950/30 px-2.5 py-1 text-xs font-medium text-indigo-400"
               >
                 {tag}
               </span>
             ))}
           </div>
 
-          <p className="mt-6 rounded-lg border border-amber-200 bg-amber-50 px-4 py-3 text-sm leading-6 text-amber-800">
+          <p className="mt-6 rounded-lg border border-amber-800/50 bg-amber-950/30 px-4 py-3 text-sm leading-6 text-amber-300">
             Note: the source code is confidential and stays at Critical
             Software, so this write-up focuses on the ideas, the models and the
             results, with figures taken from my internship report.
@@ -353,7 +353,7 @@ export default function CriticalSoftwareArticle() {
           first, then hands them to the model as context to ground its answer.
         </P>
         <P>The pipeline works like this:</P>
-        <ul className="mt-4 list-disc space-y-2 pl-6 text-[16px] leading-8 text-slate-700">
+        <ul className="mt-4 list-disc space-y-2 pl-6 text-[16px] leading-8 text-zinc-400">
           <li>
             Each processed CSV is split into <strong>chunks</strong> and turned
             into vector <strong>embeddings</strong> using Hugging Face models via
@@ -392,7 +392,7 @@ export default function CriticalSoftwareArticle() {
           of microservices, each running in its own{" "}
           <strong>Podman</strong> container:
         </P>
-        <ul className="mt-4 list-disc space-y-2 pl-6 text-[16px] leading-8 text-slate-700">
+        <ul className="mt-4 list-disc space-y-2 pl-6 text-[16px] leading-8 text-zinc-400">
           <li>
             a <strong>FastAPI</strong> backend that handles uploads, runs the
             trained models and talks to the database;
@@ -461,10 +461,10 @@ export default function CriticalSoftwareArticle() {
           mission-critical systems for industries from automotive to aerospace.
         </P>
 
-        <div className="mt-14 border-t border-slate-200 pt-8">
+        <div className="mt-14 border-t border-zinc-800 pt-8">
           <Link
             href="/#projects"
-            className="inline-flex items-center gap-2 rounded-lg bg-slate-900 px-4 py-2 text-sm font-semibold text-white transition-colors hover:bg-slate-700"
+            className="inline-flex items-center gap-2 rounded-lg border border-zinc-700 bg-zinc-900 px-4 py-2 text-sm font-semibold text-zinc-300 transition-all hover:border-zinc-500 hover:bg-zinc-800 hover:text-zinc-100"
           >
             ← Back to portfolio
           </Link>
